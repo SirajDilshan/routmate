@@ -1,32 +1,16 @@
-import { Header } from "./components/Header";
-import { Footer } from "./components/Footer";
-import { Routes, Route, Navigate } from "react-router-dom";
-import { Home } from "./components/Home";
-import { ProductList } from "./components/ProductList";
-import { ProductDetail } from "./components/ProductDetail";
-import { Contact } from "./components/Contact";
-import { Admin } from "./components/Admin";
+import { Header, Footer } from "./components";
+
+import { AllRoutes } from "./routes/AllRoutes";
 
 import "./App.css";
 
 function App() {
-  const user = false;
-
   return (
     <div className="App">
       <Header />
-      <main>
-        <Routes>
-          <Route path="/" element={<Home />}></Route>
-          <Route path="Products" element={<ProductList />}></Route>
-          <Route path="Product/1001" element={<ProductDetail />}></Route>
-          <Route path="Contact" element={<Contact />}></Route>
-          <Route
-            path="/admin"
-            element={user ? <Admin /> : <Navigate to="/" />}
-          ></Route>
-        </Routes>
-      </main>
+
+      <AllRoutes />
+
       <Footer />
     </div>
   );
